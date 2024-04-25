@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>test | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="idears 成为一个真正有能力的人 成为一个浪漫主义的人 成为一个对社会有贡献的人  [TOC] 1. Do it together      —论坛插件解决两端同步播放音视频，然后在特定区域内进行弹幕聊天，电脑版or手机版 不同于腾讯会议，他能调节多机器的视频或者音乐同步播放，然后提供实时交流的聊天框或者语音 —线上自习室，线上影院 如果是论坛插件的话 2. 线上自习室粗制滥造，整个新的附件世">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test">
+<meta property="og:url" content="http://example.com/2024/04/25/test/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="idears 成为一个真正有能力的人 成为一个浪漫主义的人 成为一个对社会有贡献的人  [TOC] 1. Do it together      —论坛插件解决两端同步播放音视频，然后在特定区域内进行弹幕聊天，电脑版or手机版 不同于腾讯会议，他能调节多机器的视频或者音乐同步播放，然后提供实时交流的聊天框或者语音 —线上自习室，线上影院 如果是论坛插件的话 2. 线上自习室粗制滥造，整个新的附件世">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-25T09:27:18.000Z">
+<meta property="article:modified_time" content="2024-04-25T09:28:03.962Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -29,9 +33,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -43,8 +44,8 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -330,9 +331,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2024/04/25/test/" class="article-date">
@@ -348,12 +347,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/04/25/test/">test</a>
+    <h1 class="article-title" itemprop="name">
+      test
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -439,98 +445,193 @@
 <h2 id="32-有无插件能让浏览器背景变透明，然后只显示内容的"><a href="#32-有无插件能让浏览器背景变透明，然后只显示内容的" class="headerlink" title="32. 有无插件能让浏览器背景变透明，然后只显示内容的"></a>32. 有无插件能让浏览器背景变透明，然后只显示内容的</h2>
       
       
-    </div>
-    
-    <div class="article-info article-info-index">
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
-      
-
-      
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2024/04/25/test/">test</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+        <p><span>发布时间:</span>2024年04月25日 - 17时27分</p>
+        <p><span>最后更新:</span>2024年04月25日 - 17时28分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2024/04/25/test/" title="test">http://example.com/2024/04/25/test/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://example.com/2024/04/25/test/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2024/04/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#idears"><span class="toc-number">1.</span> <span class="toc-text">idears</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Do-it-together-%E2%80%94%E8%AE%BA%E5%9D%9B%E6%8F%92%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">1. Do it together      —论坛插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BA%BF%E4%B8%8A%E8%87%AA%E4%B9%A0%E5%AE%A4%E7%B2%97%E5%88%B6%E6%BB%A5%E9%80%A0%EF%BC%8C%E6%95%B4%E4%B8%AA%E6%96%B0%E7%9A%84"><span class="toc-number">1.2.</span> <span class="toc-text">2. 线上自习室粗制滥造，整个新的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8A%8A%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E7%BD%91%E9%A1%B5%E6%8A%95%E5%BD%B1%E5%88%B0%E6%A1%8C%E9%9D%A2%E4%BD%9C%E4%B8%BA%E8%83%8C%E6%99%AF"><span class="toc-number">1.3.</span> <span class="toc-text">3. 把文件或者网页投影到桌面作为背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%9C%A8%E5%86%99%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E4%BD%9C%E4%B8%BA%E6%B3%A8%E9%87%8A%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">4. 在写代码中插入图片作为注释？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%BD%91%E7%BB%9C%E4%BA%8B%E4%BB%B6%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%B9%B3%E5%8F%B0%EF%BC%81%E2%80%9C%E7%BD%91%E7%BB%9C%E8%AE%B0%E5%BF%86%E2%80%9D"><span class="toc-number">1.5.</span> <span class="toc-text">5. 网络事件资源共享平台！“网络记忆”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Eup%E7%9A%84%E6%83%B3%E6%B3%95"><span class="toc-number">1.6.</span> <span class="toc-text">6. 一种关于up的想法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AD%A6-%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-%E5%88%86%E4%BA%AB"><span class="toc-number">1.6.1.</span> <span class="toc-text">自学 论文解读 分享</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-AI%E5%B8%AE%E5%8A%A9%E7%BB%98%E5%9B%BE%EF%BC%8C%E5%B0%B1%E6%98%AF%E7%9B%B4%E6%8E%A5%E5%9C%A8%E5%9B%BE%E4%B8%8A%E4%BF%AE%E6%94%B9%EF%BC%8C%E7%84%B6%E5%90%8Eai%E7%94%BB%EF%BC%8C%E7%84%B6%E5%90%8E%E5%90%88%E6%88%90%E5%8A%A8%E7%94%BB%E9%99%8D%E4%BD%8E%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C%E7%9A%84%E9%97%A8%E6%A7%9B"><span class="toc-number">1.7.</span> <span class="toc-text">7. AI帮助绘图，就是直接在图上修改，然后ai画，然后合成动画降低动画制作的门槛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E4%BA%BA%E6%98%AF%E4%B8%80%E5%88%87%E7%A4%BE%E4%BC%9A%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%BB%E5%92%8C"><span class="toc-number">1.8.</span> <span class="toc-text">8. 人是一切社会关系的总和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%BC%80%E5%A7%8B%E7%9D%80%E6%89%8B%E5%AE%9E%E7%8E%B0%E6%88%91%E7%9A%84%E5%AE%B6%E5%85%B7%E8%AE%BE%E8%AE%A1%E5%85%AC%E5%8F%B8%E5%88%9B%E7%AB%8B"><span class="toc-number">1.9.</span> <span class="toc-text">9. 开始着手实现我的家具设计公司创立</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E%EF%BC%8C%E5%A2%9E%E5%BC%BA%E7%8E%B0%E5%AE%9E%EF%BC%9F"><span class="toc-number">1.10.</span> <span class="toc-text">10. 虚拟现实，增强现实？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E7%9B%91%E7%AE%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.11.</span> <span class="toc-text">11. 监管系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E5%8F%8D%E9%A6%88"><span class="toc-number">1.12.</span> <span class="toc-text">12. 反馈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E8%B5%84%E5%8A%A91-2%E4%B8%AA%E5%AD%A6%E7%94%9F"><span class="toc-number">1.13.</span> <span class="toc-text">13. 资助1-2个学生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%9F%BA%E4%BA%8E%E5%BE%AE%E4%BF%A1%E9%80%9A%E8%AE%AF%E5%BD%95%E5%AE%9E%E7%8E%B0%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E7%9A%84%E6%90%AD%E5%BB%BA%EF%BC%9F"><span class="toc-number">1.14.</span> <span class="toc-text">14. 基于微信通讯录实现社会网络的搭建？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E5%B0%86%E5%BE%90%E6%B6%9B%E7%BB%8F%E5%85%B8%E8%AE%B2%E8%A7%A3%E4%BA%BA%E7%94%9F%E7%9A%84%E5%8F%A5%E5%AD%90%E5%90%88%E9%9B%86"><span class="toc-number">1.15.</span> <span class="toc-text">15. 将徐涛经典讲解人生的句子合集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-creation-%E9%87%8F%E4%BA%A7%E8%AE%A1%E5%88%92"><span class="toc-number">1.16.</span> <span class="toc-text">16. creation 量产计划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%AD%A6%E4%B9%A0%E7%BD%91%E3%80%8A%E4%B9%9D%E5%8D%81%E4%BA%8C%E5%8F%B7%E6%B1%BD%E6%B2%B9%E3%80%8B"><span class="toc-number">1.17.</span> <span class="toc-text">17. 马克思主义学习网《九十二号汽油》</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-%E7%AC%94%E5%8F%8B%E6%B4%BB%E5%8A%A8"><span class="toc-number">1.18.</span> <span class="toc-text">18. 笔友活动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#even-%E5%8F%AF%E4%BB%A5%E6%95%B4%E7%90%86%E6%88%90%E6%96%87"><span class="toc-number">1.18.1.</span> <span class="toc-text">even 可以整理成文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%94%E5%8F%8B%E6%A0%91%E6%B4%9E%E2%80%93%E5%B9%BF%E6%92%AD%E9%82%AE%E4%BB%B6%EF%BC%8C%E6%9D%82%E6%96%87%E5%88%86%E4%BA%AB%EF%BC%9F"><span class="toc-number">1.18.2.</span> <span class="toc-text">笔友树洞–广播邮件，杂文分享？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%8A%E7%94%9F%E4%BA%BA%E3%80%8B%E5%85%AC%E4%BC%97%E5%8F%B7"><span class="toc-number">1.18.3.</span> <span class="toc-text">《生人》公众号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-diary-%E7%BD%91%E7%AB%99"><span class="toc-number">1.19.</span> <span class="toc-text">19. diary 网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-%E8%AF%BB%E4%B9%A6%E6%9D%82%E8%AE%B0"><span class="toc-number">1.20.</span> <span class="toc-text">20. 读书杂记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E5%90%8D%E5%B1%B1%E5%A4%A7%E5%B7%9D"><span class="toc-number">1.21.</span> <span class="toc-text">21. 名山大川</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E8%BF%90%E5%8A%A8%E6%90%AD%E5%AD%90%E7%BD%91%E7%AB%99%E3%80%81%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.22.</span> <span class="toc-text">22. 运动搭子网站、程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%B3%E8%81%94%E5%BE%AE%E4%BF%A1%E7%BE%A4%E8%81%8A"><span class="toc-number">1.23.</span> <span class="toc-text">23. 小程序关联微信群聊</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E5%B8%AE%E5%8A%A9%E5%BA%97%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%EF%BC%8C%E6%99%BA%E8%83%BD%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.24.</span> <span class="toc-text">24. 帮助店面设计小程序，智能系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-%E5%9C%B0%E4%B8%8B%E6%96%B0%E9%97%BB%E7%BD%91"><span class="toc-number">1.25.</span> <span class="toc-text">25. 地下新闻网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-%E8%BA%AB%E8%BE%B9%E6%96%B0%E9%97%BB%EF%BC%8C%E4%BA%BA%E7%89%A9%E8%81%8C%E4%B8%9A%E4%B8%80%E7%B1%BB%E4%BA%BA%E4%B8%93%E9%A2%98%EF%BC%9B%E4%BA%BA%E7%89%A9%E4%BC%A0%E8%AE%B0"><span class="toc-number">1.26.</span> <span class="toc-text">26. 身边新闻，人物职业一类人专题；人物传记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-ai-%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C%E5%9B%A2%E9%98%9F%EF%BC%8C%E4%B8%BB%E8%A6%81%E6%98%AF%E5%89%A7%E6%9C%AC"><span class="toc-number">1.27.</span> <span class="toc-text">27. ai 动画制作团队，主要是剧本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-%E5%AD%A6%E7%94%9F%E7%94%B5%E5%AD%90%E6%A1%A3%E6%A1%88%EF%BC%8C%E7%BB%93%E5%90%88%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E5%AD%A6"><span class="toc-number">1.28.</span> <span class="toc-text">28. 学生电子档案，结合人工智能教学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-%E8%A7%81%E5%AD%97%E5%A6%82%E9%9D%A2"><span class="toc-number">1.29.</span> <span class="toc-text">29. 见字如面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E8%A1%8C%E4%B8%9A%E8%BD%AF%E4%BB%B6%E7%9B%B8%E4%BA%92%E7%BB%93%E5%90%88"><span class="toc-number">1.30.</span> <span class="toc-text">30. 人工智能与行业软件相互结合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#31-%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E6%A0%87%E8%AE%B0"><span class="toc-number">1.31.</span> <span class="toc-text">31. 英语学习标记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-%E6%9C%89%E6%97%A0%E6%8F%92%E4%BB%B6%E8%83%BD%E8%AE%A9%E6%B5%8F%E8%A7%88%E5%99%A8%E8%83%8C%E6%99%AF%E5%8F%98%E9%80%8F%E6%98%8E%EF%BC%8C%E7%84%B6%E5%90%8E%E5%8F%AA%E6%98%BE%E7%A4%BA%E5%86%85%E5%AE%B9%E7%9A%84"><span class="toc-number">1.32.</span> <span class="toc-text">32. 有无插件能让浏览器背景变透明，然后只显示内容的</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
 
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/04/25/hello-world/" class="article-date">
-      <time datetime="2024-04-25T08:09:52.425Z" itemprop="datePublished">2024-04-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+
     
-      <input type="hidden" class="isFancy" />
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'swing'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
     
-    
-      <header class="article-header">
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/04/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-      
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2024/04/25/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/04/25/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/25/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
 
 
-
-
-
-
-
-
-
-  
-  
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
